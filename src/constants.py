@@ -1,4 +1,11 @@
+import pygame
 
+#O
+OBSTACLE_LIST = ["Car01", "Car02", "Car03"]
+OBSTACLE_EVENT = pygame.USEREVENT
+
+#P
+POSITION_LIST = [(100,100), (200,200), (300,300)]
 
 #S
 SCREEN_WIDTH = 800

@@ -1,8 +1,10 @@
+import random
+
 import pygame
 
 from src.Entity import Entity
 from src.EntityFactory import EntityFactory
-from src.constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from src.constants import SCREEN_WIDTH, SCREEN_HEIGHT, OBSTACLE_EVENT, OBSTACLE_LIST
 
 
 class Game:
@@ -17,23 +19,30 @@ class Game:
     def run(self):
         running = True
         clock = pygame.time.Clock()
-        dt = 0
-        position = pygame.Vector2(self.screen.get_width() / 2, self.screen.get_height() - 25)
+        clock.tick(60)
 
         while running:
+            self.screen.fill("navy blue")
+
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
                     pygame.quit()
-            self.screen.fill("navy blue")
+
+                if event.type == OBSTACLE_EVENT:
+                    choice = random.choice(OBSTACLE_LIST)
+                    self.entity_list.append(EntityFactory.get_entity(choice))
 
             for entity in self.entity_list:
                 self.screen.blit(entity.surf, entity.rect)
                 entity.move()
 
 
-            pygame.display.flip()
-            #dt = clock.tick(60) /1000
+
+                pygame.display.flip()
+
+
 
 
 
