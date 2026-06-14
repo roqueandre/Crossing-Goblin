@@ -1,8 +1,8 @@
 from src.Entity import Entity
 
-class Obstacle(Entity):
+class Background(Entity):
     def __init__(self, name, position):
         super().__init__(name, position)
 
     def move(self):
-        self.rect.centerx += 6
+        pass

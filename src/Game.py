@@ -4,7 +4,7 @@ import pygame
 
 from src.Entity import Entity
 from src.EntityFactory import EntityFactory
-from src.constants import SCREEN_WIDTH, SCREEN_HEIGHT, OBSTACLE_EVENT, OBSTACLE_LIST
+from src.constants import SCREEN_WIDTH, SCREEN_HEIGHT, OBSTACLE_EVENT, OBSTACLE_LIST, SPAWN_TIME
 
 
 class Game:
@@ -12,7 +12,9 @@ class Game:
         pygame.init()
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         self.entity_list: list[Entity] = []
+        self.entity_list.append(EntityFactory.get_entity("Road01"))
         self.entity_list.append(EntityFactory.get_entity("Player"))
+        pygame.time.set_timer(OBSTACLE_EVENT, SPAWN_TIME)
 
 
 
@@ -23,7 +25,6 @@ class Game:
 
         while running:
             self.screen.fill("navy blue")
-
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -40,11 +41,9 @@ class Game:
 
 
 
-                pygame.display.flip()
+
+            pygame.display.flip()
 
 
 
 
-
-game = Game()
-game.run()
