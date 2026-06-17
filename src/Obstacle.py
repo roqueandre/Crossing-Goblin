@@ -5,4 +5,4 @@ class Obstacle(Entity):
         super().__init__(name, position)
 
     def move(self):
-        self.rect.centerx += 6
+        self.rect.centerx += 9
