@@ -1,5 +1,9 @@
 import pygame
 
+#F
+FONT_OPTIONS = "./assets/fonts/Merriweather_24pt-Bold.ttf"
+FONT_TITLE = "./assets/fonts/Barriecito-Regular.ttf"
+
 #E
 EVENT_ENEMY = pygame.USEREVENT + 1
 
@@ -10,8 +14,6 @@ OBSTACLE_SPEED = 2
 
 #P
 POSITION_LIST = [(-75,105), (-75,200), (-75,315), (-75,425)]
-
-
 
 #S
 SCREEN_WIDTH = 800
