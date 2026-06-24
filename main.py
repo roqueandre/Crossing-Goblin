@@ -7,7 +7,6 @@ screen = pygame.display.set_mode(size=(800, 600))
 menu = Menu(screen)
 
 highscore = 0
-
 while True:
     menu.run()
     game = Game(highscore)
