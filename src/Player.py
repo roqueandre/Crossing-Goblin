@@ -1,13 +1,12 @@
 import pygame
 from src.Entity import Entity
-#from src.constants import PLAYER_SPEED
+
 
 
 class Player(Entity):
     def __init__(self, name, position):
         super().__init__(name, position)
         self.speed = 2
-
 
     def move(self):
         keys = pygame.key.get_pressed()

@@ -17,7 +17,6 @@ class Game:
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         self.entity_list: list[Entity] = []
         self.obstacle_list: list[Entity] = []
-
         self.entity_list.append(EntityFactory.get_entity("Road001"))
         self.player = EntityFactory.get_entity("Player")
         self.entity_list.append(self.player)
