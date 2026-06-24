@@ -80,7 +80,6 @@ class Game:
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-
                     pygame.quit()
                     return
 
@@ -93,7 +92,7 @@ class Game:
                 if event.type == OBSTACLE_EVENT and not self.game_over:
                     choice = random.choice(OBSTACLE_LIST)
                     new_obstacle = EntityFactory.get_entity(choice)
-                    # SOLUÇÃO: Injeta a velocidade atualizada no novo obstáculo criado
+                    #Injeta a velocidade atualizada no novo obstáculo criado
                     new_obstacle.speed = self.current_obstacle_speed
                     self.entity_list.append(new_obstacle)
                     self.obstacle_list.append(new_obstacle)
@@ -123,6 +122,9 @@ class Game:
 
                     if player_hitbox.colliderect(obstacle_hitbox):
                         self.game_over = True
+                        pygame.mixer_music.stop()
+                        pygame.mixer_music.load("./assets/sounds/gameover.wav")
+                        pygame.mixer_music.play()
                         if self.player in self.entity_list:
                             self.entity_list.remove(self.player)
 

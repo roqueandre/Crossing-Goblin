@@ -25,15 +25,15 @@ class Score:
 
     def draw(self, screen: Surface):
         """Desenha todas as informações de pontos na tela"""
-        # Texto do Score Atual (Canto Esquerdo)
+        # Texto do Score Atual
         score_surf = self.hud_font.render(f"SCORE: {self.current_score}", True, "Grey")
         screen.blit(score_surf, (20, 20))
 
-        # Texto do Highscore (Centro) - Brilha em tempo real se passar o recorde antigo
+        # Texto do Highscore
         display_highscore = max(self.current_score, self.highscore)
         high_surf = self.hud_font.render(f"HI-SCORE: {display_highscore}", True, "Red")
         screen.blit(high_surf, (SCREEN_WIDTH // 2 - 70, 20))
 
-        # Texto da Fase/Level (Canto Direito)
+        # Texto da Fase/Level
         level_surf = self.hud_font.render(f"STAGE: {self.level}", True, "Green")
         screen.blit(level_surf, (SCREEN_WIDTH - 150, 20))

@@ -76,7 +76,6 @@ class Menu:
                     quit()
 
                 if event.type == pygame.KEYDOWN:
-                    # Se o jogador estiver vendo as instruções, tecla ENTRE ou ESC fecha a tela
                     if self.showing_instructions:
                         if event.key in (pygame.K_ESCAPE, pygame.K_RETURN):
                             self.showing_instructions = False
