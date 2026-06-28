@@ -26,7 +26,7 @@ class Score:
     def draw(self, screen: Surface):
         """Desenha todas as informações de pontos na tela"""
         # Texto do Score Atual
-        score_surf = self.hud_font.render(f"SCORE: {self.current_score}", True, "Grey")
+        score_surf = self.hud_font.render(f"SCORE: {self.current_score}", True, "White")
         screen.blit(score_surf, (20, 20))
 
         # Texto do Highscore
